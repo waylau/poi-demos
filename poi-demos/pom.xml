@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.waylau.poi</groupId>
-  <artifactId>hssf-helloword</artifactId>
+  <artifactId>poi-demos</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>hssf-helloword</name>
+  <name>poi-demos</name>
   <url>https://github.com/waylau/poi-demos</url>
 
   <properties>

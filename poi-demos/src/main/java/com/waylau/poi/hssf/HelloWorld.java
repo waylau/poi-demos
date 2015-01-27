@@ -1,14 +1,16 @@
-package com.waylau.poi;
+package com.waylau.poi.hssf;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.poi.hssf.usermodel.HSSFHeader;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.Header;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -18,7 +20,7 @@ import org.apache.poi.ss.util.WorkbookUtil;
  * Hello world!
  * 
  * @author waylau.com
- * 2015年1月3日
+ * @date  2015-1-27
  */
 public class HelloWorld 
 {
@@ -48,7 +50,7 @@ public class HelloWorld
         String safeName = WorkbookUtil.createSafeSheetName("[Waylau's Blog*?]"); // 返回 " Waylau's Blog   "
 
         Sheet sheet3 = wb.createSheet(safeName);
-
+        
         //创建数据 行。Row 是从  0 开始的
         Row row = sheet1.createRow((short)0);
         
