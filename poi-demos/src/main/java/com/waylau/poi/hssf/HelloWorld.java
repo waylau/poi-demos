@@ -5,12 +5,11 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.poi.hssf.usermodel.HSSFHeader;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
-import org.apache.poi.ss.usermodel.Header;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -78,6 +77,23 @@ public class HelloWorld
         row.createCell(5).setCellValue(Calendar.getInstance());
         row.createCell(6).setCellType(Cell.CELL_TYPE_ERROR);
         
+        Cell cell7 = row.createCell(7);
+        cell7.setCellValue("This is a  loooooooooooooooooooooooooooooog string");        
+        
+        // 设置 Cell 边框的样式
+        CellStyle style = wb.createCellStyle();
+        style.setWrapText(true);
+        style.setBorderBottom((short) 20);
+        style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        style.setBorderLeft(CellStyle.BORDER_THIN);
+        style.setLeftBorderColor(IndexedColors.GREEN.getIndex());
+        style.setBorderRight(CellStyle.BORDER_THIN);
+        style.setRightBorderColor(IndexedColors.BLUE.getIndex());
+        style.setBorderTop(CellStyle.BORDER_MEDIUM_DASHED);
+        style.setTopBorderColor(IndexedColors.BLACK.getIndex());
+        //style.setWrapText(true);
+        cell7.setCellStyle(style);
+
         //生成文件
         FileOutputStream fileOut = new FileOutputStream("helloword.xls");
         wb.write(fileOut);
