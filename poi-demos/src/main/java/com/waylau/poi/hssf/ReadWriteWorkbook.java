@@ -20,12 +20,12 @@ public class ReadWriteWorkbook {
     public static void main(String[] args) throws IOException {
         FileInputStream fileIn = null;
         FileOutputStream fileOut = null;
-
+        HSSFWorkbook wb = null;
         try
         {
             fileIn = new FileInputStream("workbook.xls");
             POIFSFileSystem fs = new POIFSFileSystem(fileIn);
-            HSSFWorkbook wb = new HSSFWorkbook(fs);
+            wb = new HSSFWorkbook(fs);
             HSSFSheet sheet = wb.getSheetAt(0);
             HSSFRow row = sheet.getRow(2);
             if (row == null)
@@ -44,6 +44,9 @@ public class ReadWriteWorkbook {
                 fileOut.close();
             if (fileIn != null)
                 fileIn.close();
+            if (wb != null)
+                wb.close();
+ 
         }
     }
 }

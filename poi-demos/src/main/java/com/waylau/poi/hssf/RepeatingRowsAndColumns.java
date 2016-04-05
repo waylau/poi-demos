@@ -10,7 +10,8 @@ import java.io.FileOutputStream;
  * @date  2015-1-27
  */
 public class RepeatingRowsAndColumns {
-    public static void main(String[] args) throws IOException {
+    @SuppressWarnings("deprecation")
+	public static void main(String[] args) throws IOException {
         HSSFWorkbook wb = new HSSFWorkbook();
         HSSFSheet sheet1 = wb.createSheet("first sheet");
         wb.createSheet("second sheet");
@@ -38,5 +39,6 @@ public class RepeatingRowsAndColumns {
         FileOutputStream fileOut = new FileOutputStream("workbook.xls");
         wb.write(fileOut);
         fileOut.close();
+        wb.close();
     }
 }

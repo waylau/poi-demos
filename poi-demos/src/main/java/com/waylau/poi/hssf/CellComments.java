@@ -78,5 +78,6 @@ public class CellComments {
         FileOutputStream out = new FileOutputStream("poi_comment.xls");
         wb.write(out);
         out.close();
+        wb.close();
     }
 }

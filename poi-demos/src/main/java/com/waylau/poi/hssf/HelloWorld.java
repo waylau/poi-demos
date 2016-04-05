@@ -23,7 +23,8 @@ import org.apache.poi.ss.util.WorkbookUtil;
  */
 public class HelloWorld 
 {
-    public static void main( String[] args ) throws IOException
+    @SuppressWarnings("unused")
+	public static void main( String[] args ) throws IOException
     {
         //创建工作簿
         Workbook wb = new HSSFWorkbook();  // 或 new XSSFWorkbook();
@@ -98,6 +99,7 @@ public class HelloWorld
         FileOutputStream fileOut = new FileOutputStream("helloword.xls");
         wb.write(fileOut);
         fileOut.close();
+        wb.close();
         
         System.out.println( "已经生成文件");
     }

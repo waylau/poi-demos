@@ -150,5 +150,6 @@ public class BigExample {
         // close our file (don't blow out our file handles
         wb.write(out);
         out.close();
+        wb.close();
     }
 }
